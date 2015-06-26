@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" type="text/css" />
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/firebase/firebase.js"></script>
+    <script src ="./bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="index.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+
+<div ng-controller="myController" layout="column">
+
+    <div layout layout-sm="column">
+    <md-button class="md-raised md-primary" ng-click="facebook()" flex = '30'> login with facebook</md-button>
+        <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+           {{displayname}}
+        </md-whiteframe>
+</div>
+    <ul>
+        <li ng-repeat="a in message"> {{a.name}} : {{a.msg}} </li>
+    </ul>
+
+    <form>
+        <div layout layout-sm="column">
+            <md-input-container flex = '30'>
+                <label>Name</label>
+                <input type="text" ng-model="name" placeholder="userName"/>
+            </md-input-container>
+            <md-input-container flex = '30'>
+                <label>Text</label>
+                <input type="text" ng-model="msg" placeholder="yourText"/>
+            </md-input-container>
+        </div>
+    </form>
+
+
+    <div layout layout-sm="column">
+        <md-button class="md-raised md-primary" ng-click="call()" flex = '30'>Send</md-button>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
